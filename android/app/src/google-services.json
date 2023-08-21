@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "457394496756",
+    "project_id": "login-bloc-5af36",
+    "storage_bucket": "login-bloc-5af36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457394496756:android:0fb331ba169f2676846aa1",
+        "android_client_info": {
+          "package_name": "uz.login.bloc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457394496756-t6ji85nf40i117kbg7dio7im5no6sgif.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFQVHgB03RQC6SaptbNQ6yNe3LwCqICVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457394496756-t6ji85nf40i117kbg7dio7im5no6sgif.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

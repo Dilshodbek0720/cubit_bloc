@@ -1,4 +1,4 @@
-package com.example.cubit_bloc
+package uz.login.bloc
 
 import io.flutter.embedding.android.FlutterActivity
 

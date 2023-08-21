@@ -1,7 +1,7 @@
-import 'package:cubit_bloc/cubits/user/user_cubit.dart';
-import 'package:cubit_bloc/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'user_export.dart';
+
 
 class UserPage extends StatelessWidget {
   const UserPage({super.key});
