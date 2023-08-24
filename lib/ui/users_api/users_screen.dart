@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cubit_bloc/cubits/user_api/users_cubit.dart';
 import 'package:cubit_bloc/data/models/users_model.dart';
 import 'package:flutter/cupertino.dart';
@@ -44,12 +45,18 @@ class _UsersScreenState extends State<UsersScreen> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(25),
                           child: Container(
+                            padding: EdgeInsets.all(10),
                             height: 100,
                             width: 100,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(25)
                             ),
-                            child: Image.network(user.avatar_url, fit: BoxFit.cover,),
+                            child: CachedNetworkImage(
+                              fit: BoxFit.cover,
+                              imageUrl: user.avatar_url,
+                              placeholder: (context, url) => CircularProgressIndicator(),
+                              errorWidget: (context, url, error) => Icon(Icons.error),
+                            ),
                           ),
                         ),
                         const SizedBox(width: 25,),
@@ -70,6 +77,7 @@ class _UsersScreenState extends State<UsersScreen> {
           }
           return const Center(child: CircularProgressIndicator(),);
         },
+        buildWhen: (previus, current) => previus != current,
         listener: (context, state){
           if(state is UsersLoadingState){
             const Center(child: CircularProgressIndicator(),);
