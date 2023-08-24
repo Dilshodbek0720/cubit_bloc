@@ -3,6 +3,7 @@ import 'package:cubit_bloc/ui/counter_page/counter_page.dart';
 import 'package:cubit_bloc/ui/power_page/power_page.dart';
 import 'package:cubit_bloc/ui/tabbox/tab_box.dart';
 import 'package:cubit_bloc/ui/user_page/user_page.dart';
+import 'package:cubit_bloc/ui/users_api/users_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -43,7 +44,12 @@ class HomeScreen extends StatelessWidget {
               Navigator.push(context, MaterialPageRoute(builder: (context){
                 return SignUpScreen();
               }));
-            }, child: const Text("SignUp Screen", style: TextStyle(fontSize: 25),))
+            }, child: const Text("SignUp Screen", style: TextStyle(fontSize: 25),)),
+            TextButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return UsersScreen();
+              }));
+            }, child: const Text("Users Screen", style: TextStyle(fontSize: 25),))
           ],
         ),
       ),

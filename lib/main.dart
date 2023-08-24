@@ -3,11 +3,12 @@ import 'package:cubit_bloc/cubits/counter/counter_cubit.dart';
 import 'package:cubit_bloc/cubits/navbar/navbar_cubit.dart';
 import 'package:cubit_bloc/cubits/power/power_cubit.dart';
 import 'package:cubit_bloc/cubits/user/user_cubit.dart';
+import 'package:cubit_bloc/data/network/api_service/api_service.dart';
 import 'package:cubit_bloc/ui/home/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'cubits/user_api/users_cubit.dart';
 import 'data/network/firebase/auth_service.dart';
 
 void main() {
@@ -26,8 +27,9 @@ class App extends StatelessWidget {
       BlocProvider(create: (_) => UserCubit(),),
       BlocProvider(create: (_) => PowerCubit()),
       BlocProvider(create: (_) => NavbarCubit()),
-      BlocProvider(create: (_) => AuthCubit(firebaseServices: AuthService()))
-    ], child: MainApp());
+      BlocProvider(create: (_) => AuthCubit(firebaseServices: AuthService())),
+      BlocProvider(create: (_) => UsersCubit(apiService: ApiService()))
+    ], child: const MainApp());
   }
 }
 
@@ -54,7 +56,7 @@ class MainApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen()
+      home: const HomeScreen()
     );
   }
 }
