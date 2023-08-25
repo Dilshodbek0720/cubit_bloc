@@ -45,7 +45,7 @@ class _UsersScreenState extends State<UsersScreen> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(25),
                           child: Container(
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             height: 100,
                             width: 100,
                             decoration: BoxDecoration(
@@ -54,8 +54,8 @@ class _UsersScreenState extends State<UsersScreen> {
                             child: CachedNetworkImage(
                               fit: BoxFit.cover,
                               imageUrl: user.avatar_url,
-                              placeholder: (context, url) => CircularProgressIndicator(),
-                              errorWidget: (context, url, error) => Icon(Icons.error),
+                              placeholder: (context, url) => const CircularProgressIndicator(),
+                              errorWidget: (context, url, error) => const Icon(Icons.error),
                             ),
                           ),
                         ),
@@ -77,7 +77,7 @@ class _UsersScreenState extends State<UsersScreen> {
           }
           return const Center(child: CircularProgressIndicator(),);
         },
-        buildWhen: (previus, current) => previus != current,
+        buildWhen: (previous, current) => previous != current,
         listener: (context, state){
           if(state is UsersLoadingState){
             const Center(child: CircularProgressIndicator(),);
